@@ -1,0 +1,191 @@
+.whatido-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-8);
+}
+
+.whatido-card {
+  padding: var(--spacing-6);
+}
+
+/* ATM Card Layout for What I Do */
+.whatido-card.atm-card-theme {
+  position: relative;
+  background-color: #0b1120;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  color: #fff;
+  aspect-ratio: 1.586; /* Standard credit card ratio */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatido-card.atm-card-theme:hover {
+  transform: translateY(-10px) scale(1.02);
+  z-index: 10;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.2);
+}
+
+.atm-bg-image {
+  position: absolute;
+  inset: 0;
+  /* Dark neon geometric synthwave theme */
+  background-image: url('https://images.unsplash.com/photo-1614850715649-1d0106293bd1?q=80&w=1000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.5s;
+}
+
+.whatido-card.atm-card-theme:hover .atm-bg-image {
+  transform: scale(1.1);
+}
+
+/* Color variations for each card */
+.whatido-card:nth-child(1) .atm-bg-image { filter: hue-rotate(0deg); }
+.whatido-card:nth-child(2) .atm-bg-image { filter: hue-rotate(45deg); background-position: left; }
+.whatido-card:nth-child(3) .atm-bg-image { filter: hue-rotate(90deg); background-position: bottom; }
+.whatido-card:nth-child(4) .atm-bg-image { filter: hue-rotate(180deg); background-position: right; }
+
+.whatido-card .card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.atm-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Silver Chip */
+.whatido-card .atm-chip {
+  width: 45px;
+  height: 35px;
+  background: linear-gradient(135deg, #e5e7eb, #9ca3af, #d1d5db);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.3);
+}
+.whatido-card .atm-chip::before {
+  content: '';
+  position: absolute;
+  top: 45%; left: 0; right: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+.whatido-card .atm-chip::after {
+  content: '';
+  position: absolute;
+  left: 45%; top: 0; bottom: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 1px 0 0 rgba(255,255,255,0.3);
+}
+
+.whatido-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  color: #fff;
+}
+
+.atm-card-middle {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.atm-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.atm-skills-number {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+  line-height: 1.5;
+}
+
+.atm-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.atm-bottom-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.atm-label {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+
+.atm-value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+  font-weight: bold;
+}
+.text-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* Staggered alternating layout on desktop */
+.whatido-card:nth-child(even) {
+  transform: translateY(40px);
+}
+
+.whatido-card:nth-child(even):hover {
+  transform: translateY(30px) scale(1.02);
+}
+
+@media (max-width: 900px) {
+  .whatido-grid {
+    grid-template-columns: 1fr;
+  }
+  .whatido-card:nth-child(even),
+  .whatido-card:nth-child(even).active {
+    transform: translateY(0);
+  }
+  .whatido-card:nth-child(even):hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  .whatido-card.atm-card-theme {
+    aspect-ratio: auto;
+    min-height: 220px;
+  }
+}

@@ -1,0 +1,95 @@
+.island-nav {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90vw;
+  background: rgba(45, 45, 45, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  z-index: 1000;
+  transition: all 0.4s var(--ease-smooth);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.island-nav.scrolled {
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  top: 1rem;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-home-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.2s;
+  padding-left: 0.5rem;
+}
+
+.nav-home-icon:hover {
+  color: var(--accent-blue);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #ffffff;
+}
+
+.nav-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.nav-cta-btn:hover {
+  background: #111111;
+  transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none; /* Hide links on mobile to save space, rely on hamburger in future */
+  }
+  .nav-content {
+    gap: 1rem;
+  }
+}

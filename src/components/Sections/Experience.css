@@ -1,0 +1,266 @@
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding-bottom: var(--spacing-8);
+}
+
+.experience-card {
+  padding: 0;
+  border-radius: 24px;
+  width: 100%;
+}
+
+.experience-card .card-content {
+  padding: var(--spacing-8);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-header {
+  display: flex;
+  gap: var(--spacing-6);
+  align-items: flex-start;
+  margin-bottom: var(--spacing-6);
+}
+
+.exp-company-logo {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(255,255,255,0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-company-logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--logo-color);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.logo-fallback {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  color: var(--logo-color);
+  letter-spacing: 1px;
+}
+
+.exp-title-group {
+  flex: 1;
+}
+
+.exp-role {
+  font-size: var(--fs-2xl);
+  color: #fff;
+  margin-bottom: var(--spacing-2);
+}
+
+.exp-company {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--fs-lg);
+  color: var(--text-main);
+  margin-bottom: var(--spacing-3);
+  font-weight: 500;
+}
+
+.exp-meta {
+  display: flex;
+  gap: var(--spacing-6);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.exp-duration, .exp-location {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.exp-body {
+  margin-top: var(--spacing-6);
+}
+
+.exp-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.exp-highlights li {
+  position: relative;
+  padding-left: var(--spacing-6);
+  color: var(--text-muted);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+}
+
+.highlight-bullet {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+
+@media (max-width: 768px) {
+  .exp-header {
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+  .exp-meta {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+}
+
+/* ATM Card Theme */
+.experience-card.atm-card-theme {
+  background: linear-gradient(135deg, rgba(30, 32, 35, 0.95) 0%, rgba(15, 17, 20, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Metallic Sheen */
+.experience-card.atm-card-theme::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(105deg, 
+    transparent 30%, 
+    rgba(255,255,255,0.03) 35%, 
+    rgba(255,255,255,0.08) 40%, 
+    transparent 45%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.experience-card.atm-card-theme .card-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ATM Card Header (Chip & Contactless) */
+.atm-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.atm-chip {
+  width: 48px;
+  height: 36px;
+  background: linear-gradient(135deg, #d4af37, #f3e5ab, #aa8022);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #7c5c15;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.atm-chip::before {
+  content: '';
+  position: absolute;
+  top: 45%; left: 0; right: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.atm-chip::after {
+  content: '';
+  position: absolute;
+  left: 45%; top: 0; bottom: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 1px 0 0 rgba(255,255,255,0.3);
+}
+
+.atm-contactless {
+  color: rgba(255, 255, 255, 0.4);
+  transform: rotate(90deg);
+}
+
+/* Typography Overrides for ATM look */
+.experience-card.atm-card-theme .exp-role {
+  font-family: 'Courier New', monospace;
+  font-size: var(--fs-xl);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8), -1px -1px 1px rgba(255,255,255,0.2);
+  margin-bottom: var(--spacing-4);
+}
+
+.experience-card.atm-card-theme .exp-company {
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
+.experience-card.atm-card-theme .exp-meta {
+  color: #d4af37; /* Premium Gold to match the chip */
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+  font-weight: 600;
+}
+
+.experience-card.atm-card-theme .exp-highlights li {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.experience-card.atm-card-theme .exp-company-logo {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4), inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.experience-card.atm-card-theme::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+    rgba(255, 255, 255, 0.05),
+    transparent 40%
+  );
+}
+
+.experience-card.atm-card-theme .skill-tags {
+  border-top-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.experience-card.atm-card-theme .skill-tag {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+.experience-card.atm-card-theme .skill-tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: translateY(-2px);
+}

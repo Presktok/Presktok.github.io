@@ -1,0 +1,153 @@
+.stats-section {
+  padding: var(--spacing-16) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  background: linear-gradient(180deg, rgba(255,255,255,0.01) 0%, transparent 100%);
+}
+
+.stats-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+}
+
+.stat-card {
+  padding: var(--spacing-6);
+  text-align: center;
+  border-radius: 20px;
+}
+
+.stat-number {
+  font-size: var(--fs-4xl);
+  font-weight: 800;
+  margin-bottom: var(--spacing-2);
+  display: inline-block;
+}
+
+.stat-label {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .stats-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .stats-grid-6 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Light Dot Theme Section (Overrides global dark mode for this section) */
+/* Dot Theme Section (Dark Mode) */
+.stats-section.dot-theme-section {
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: 8rem 0;
+}
+
+/* The dotted world map layer */
+.stats-section.dot-theme-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(59, 130, 246, 0.7) 2px, transparent 2px);
+  background-size: 16px 16px;
+  background-position: center;
+  mask-image: url('/images/world-map.svg');
+  -webkit-mask-image: url('/images/world-map.svg');
+  mask-size: 90% auto;
+  -webkit-mask-size: 90% auto;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Fade out the edges into the dark background */
+.stats-section.dot-theme-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, var(--bg-color) 95%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Scattered Layout */
+.scattered-grid {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-8);
+  padding: var(--spacing-8) 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Dot Theme Cards (Dark Mode) */
+.stat-card.dot-card {
+  background: rgba(20, 20, 25, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 1px 5px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+}
+
+/* Scatter the cards dynamically */
+.scattered-grid .stat-card.dot-card:nth-child(2n) {
+  transform: translateY(40px);
+}
+.scattered-grid .stat-card.dot-card:nth-child(3n) {
+  transform: translateY(-30px);
+}
+.scattered-grid .stat-card.dot-card:hover {
+  transform: translateY(-10px) scale(1.05) !important;
+  box-shadow: 0 30px 60px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.3);
+  z-index: 10;
+}
+
+/* Text overrides for dark cards */
+.stat-card.dot-card .stat-number {
+  background: linear-gradient(135deg, #fff 20%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -1px;
+}
+
+.stat-card.dot-card .stat-label {
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .scattered-grid .stat-card.dot-card {
+    transform: none !important;
+    width: 100%;
+    max-width: 350px;
+  }
+}

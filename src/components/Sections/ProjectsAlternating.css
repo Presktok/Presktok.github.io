@@ -1,0 +1,123 @@
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--spacing-8);
+  align-items: center;
+}
+
+.project-row.layout-right {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.project-row.layout-right .project-content {
+  order: 2;
+}
+.project-row.layout-right .project-image-wrapper {
+  order: 1;
+}
+
+.project-content {
+  padding: var(--spacing-8);
+}
+
+.project-number {
+  font-size: var(--fs-4xl);
+  font-weight: 800;
+  color: var(--accent-blue-transparent);
+  margin-bottom: var(--spacing-2);
+}
+
+.project-title-alt {
+  font-size: var(--fs-2xl);
+  color: #fff;
+  margin-bottom: var(--spacing-4);
+}
+
+.project-desc-alt {
+  font-size: var(--fs-base);
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.project-links {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.project-image-wrapper {
+  height: 400px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.reveal-project {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s var(--ease-smooth);
+}
+
+.reveal-project.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  .project-row.layout-right {
+    grid-template-columns: 1fr;
+  }
+  .project-row.layout-right .project-content,
+  .project-row.layout-right .project-image-wrapper {
+    order: initial;
+  }
+  .project-image-wrapper {
+    height: 250px;
+  }
+}
+
+/* Light Transparent Theme for Project Cards (Frosted Glass) */
+.project-content.light-transparent-theme {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.project-content.light-transparent-theme .project-title-alt {
+  color: #ffffff;
+}
+
+.project-content.light-transparent-theme .project-desc-alt {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.project-content.light-transparent-theme::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+    rgba(255, 255, 255, 0.25),
+    transparent 40%
+  );
+}
+
+/* Glassy skill tags for project cards */
+.project-content.light-transparent-theme .skill-tag {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+.project-content.light-transparent-theme .skill-tag:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
