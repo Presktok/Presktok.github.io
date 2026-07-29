@@ -18,7 +18,7 @@ Presktok provides an interactive user interface with dynamic features and a resp
    ```
 
 ## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are always welcome! Please feel free to open an issue or submit a Pull Request.
 
 ## License
 MIT License
