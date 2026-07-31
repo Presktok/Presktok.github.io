@@ -78,7 +78,7 @@ const Hero = () => {
             <a href="#featured" className="btn btn-primary magnetic">
               Explore Work <ArrowRight size={18} />
             </a>
-            <a href="/prince_resume (3).pdf" target="_blank" className="btn btn-secondary magnetic">
+            <a href="/Prince_Kumar_Resume_AIML (1).pdf" target="_blank" className="btn btn-secondary magnetic">
               <Download size={18} /> Resume
             </a>
           </div>
