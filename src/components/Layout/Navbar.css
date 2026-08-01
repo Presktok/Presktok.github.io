@@ -5,7 +5,7 @@
   transform: translateX(-50%);
   width: max-content;
   max-width: 90vw;
-  background: rgba(45, 45, 45, 0.85);
+  background: rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -17,8 +17,8 @@
 }
 
 .island-nav.scrolled {
-  background: rgba(30, 30, 30, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   top: 1rem;
 }
 
