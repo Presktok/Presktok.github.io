@@ -120,13 +120,52 @@
 }
 
 @media (max-width: 768px) {
+  .experience-container {
+    gap: var(--spacing-6);
+    padding-bottom: var(--spacing-6);
+  }
+  .experience-card .card-content {
+    padding: var(--spacing-4);
+  }
   .exp-header {
     flex-direction: column;
     gap: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+  }
+  .exp-company-logo {
+    width: 50px;
+    height: 50px;
+  }
+  .logo-fallback {
+    font-size: var(--fs-lg);
   }
   .exp-meta {
     flex-direction: column;
     gap: var(--spacing-2);
+  }
+  .exp-body {
+    margin-top: var(--spacing-4);
+  }
+  .exp-highlights {
+    gap: var(--spacing-2);
+  }
+  .exp-highlights li {
+    font-size: 0.9rem;
+  }
+  .experience-card.atm-card-theme .exp-role {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--spacing-2);
+  }
+  .experience-card.atm-card-theme .exp-company {
+    font-size: var(--fs-base);
+  }
+  .experience-card.atm-card-theme .skill-tags {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+  }
+  .atm-card-top {
+    margin-bottom: var(--spacing-4);
+    padding-bottom: var(--spacing-3);
   }
 }
 
