@@ -60,6 +60,7 @@
   padding: 0.5rem;
   text-transform: capitalize;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -78,6 +79,7 @@
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.2s, background 0.2s;
+  white-space: nowrap;
 }
 
 .nav-cta-btn:hover {
@@ -85,11 +87,48 @@
   transform: scale(1.02);
 }
 
-@media (max-width: 600px) {
-  .nav-links {
-    display: none; /* Hide links on mobile to save space, rely on hamburger in future */
+@media (max-width: 768px) {
+  .island-nav {
+    width: max-content;
+    max-width: 95vw;
+    padding: 0.35rem;
   }
   .nav-content {
     gap: 1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-home-icon {
+    width: 36px;
+    height: 36px;
+    padding-left: 0.25rem;
+  }
+  .nav-cta-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .island-nav {
+    width: 90vw;
+    padding: 0.5rem;
+    border-radius: 999px;
+  }
+  .nav-content {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-home-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .nav-cta-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
   }
 }

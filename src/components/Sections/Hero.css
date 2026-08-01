@@ -274,6 +274,7 @@
   .profile-container {
     width: 260px;
     height: 260px;
+    margin-top: 0;
   }
 }
 
@@ -371,6 +372,6 @@
     opacity: 0.5;
   }
   .huge-text-first, .huge-text-last {
-    font-size: 18vw;
+    font-size: 14vw;
   }
 }

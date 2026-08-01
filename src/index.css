@@ -285,36 +285,7 @@ section:hover .section-title::after {
   transform: scale(1.05) translateY(-2px);
 }
 
-/* Nav */
-nav {
-  position: fixed;
-  top: 0; width: 100%;
-  background: rgba(5,5,5,0.6);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  z-index: 100;
-  transition: transform 0.3s ease;
-}
-.nav-content {
-  display: flex; justify-content: space-between; align-items: center; height: 4.5rem;
-}
-.nav-links { display: flex; gap: 2rem; }
-.nav-links a { 
-  color: var(--text-muted); 
-  font-size: 0.9rem; 
-  font-weight: 500; 
-  position: relative;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0; height: 2px;
-  bottom: -4px; left: 0;
-  background-color: var(--accent-blue);
-  transition: width 0.3s ease;
-}
-.nav-links a:hover { color: #fff; }
-.nav-links a:hover::after { width: 100%; }
+
 
 /* Hero */
 .hero {
