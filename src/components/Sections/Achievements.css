@@ -61,5 +61,9 @@
 @media (max-width: 900px) {
   .achievements-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  .achievement-card {
+    padding: var(--spacing-4);
   }
 }

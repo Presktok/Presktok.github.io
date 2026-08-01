@@ -51,6 +51,10 @@
 @media (max-width: 900px) {
   .story-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  .story-block {
+    padding: var(--spacing-4);
   }
   .story-block:nth-child(even),
   .story-block:nth-child(even).active {
@@ -59,4 +63,5 @@
   .reveal-left, .reveal-right {
     transform: translateY(30px);
   }
+  .story-title { font-size: var(--fs-xl); }
 }

@@ -149,5 +149,16 @@
     transform: none !important;
     width: 100%;
     max-width: 350px;
+    padding: var(--spacing-6);
+  }
+  .stats-section.dot-theme-section {
+    padding: 4rem 0;
+  }
+  .stat-number {
+    font-size: var(--fs-3xl);
+  }
+  .scattered-grid {
+    gap: var(--spacing-6);
+    padding: var(--spacing-4) 0;
   }
 }

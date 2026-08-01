@@ -117,9 +117,22 @@
 @media (max-width: 900px) {
   .skills-interactive-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  .skills-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .skill-category-btn {
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--fs-sm);
   }
   .skill-category-btn:hover,
   .skill-category-btn.active {
     transform: translateY(-5px);
+  }
+  .cat-title {
+    font-size: var(--fs-base);
   }
 }

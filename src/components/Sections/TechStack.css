@@ -77,5 +77,6 @@
 @media (max-width: 600px) {
   .tech-stack-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-6);
   }
 }

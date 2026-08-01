@@ -83,6 +83,15 @@
   .project-image-wrapper {
     height: 250px;
   }
+  .project-content {
+    padding: var(--spacing-4);
+  }
+  .project-number {
+    font-size: var(--fs-3xl);
+  }
+  .project-title-alt {
+    font-size: var(--fs-xl);
+  }
 }
 
 /* Light Transparent Theme for Project Cards (Frosted Glass) */

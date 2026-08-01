@@ -448,6 +448,9 @@ footer {
 .socials a:hover { transform: scale(1.2) translateY(-3px); color: #fff; }
 
 @media (max-width: 800px) {
+  section { padding: 4rem 0; }
+  .section-title { font-size: 2rem; margin-bottom: 2.5rem; }
+  .cards-container { gap: 1.5rem; }
   .hero-grid { flex-direction: column-reverse; text-align: center; gap: 3rem; }
   .hero-text h1 { font-size: 3rem; }
   .hero-image { width: 180px; height: 180px; }

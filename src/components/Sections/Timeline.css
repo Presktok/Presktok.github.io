@@ -88,11 +88,13 @@
   .timeline-item {
     justify-content: flex-start;
     flex-direction: row !important;
+    margin-bottom: var(--spacing-8);
   }
   
   .timeline-content {
     width: calc(100% - 60px);
     margin-left: 60px;
+    padding: var(--spacing-4);
   }
   
   .timeline-dot {

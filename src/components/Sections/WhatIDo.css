@@ -176,6 +176,7 @@
 @media (max-width: 900px) {
   .whatido-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-6);
   }
   .whatido-card:nth-child(even),
   .whatido-card:nth-child(even).active {
@@ -186,6 +187,13 @@
   }
   .whatido-card.atm-card-theme {
     aspect-ratio: auto;
-    min-height: 220px;
+    min-height: 200px;
+    padding: var(--spacing-4);
+  }
+  .atm-title {
+    font-size: 1.2rem;
+  }
+  .atm-skills-number {
+    font-size: 0.75rem;
   }
 }
